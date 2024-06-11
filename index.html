@@ -586,7 +586,7 @@
                     </div>
                 </div>
                 <div class="col-lg-7 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <form>
+                    <form id="contactForm">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
@@ -672,6 +672,23 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+<!-- script API whatsapp -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var subject = document.getElementById('subject').value;
+            var message = document.getElementById('message').value;
+
+            var whatsappMessage = `Nama: ${name}\nEmail: ${email}\nPerihal: ${subject}\nPesan: ${message}`;
+            var phoneNumber = 'your_phone_number'; // Ganti dengan nomor WhatsApp yang dituju, misalnya: '6281234567890'
+            var whatsappURL = `https://wa.me/${6282180996114}?text=${encodeURIComponent(whatsappMessage)}`;
+
+            window.open(whatsappURL, '_blank');
+        });
+    </script>
 </body>
 
 </html>
